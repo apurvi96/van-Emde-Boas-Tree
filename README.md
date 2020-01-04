@@ -9,7 +9,7 @@ extract minimum.
 suitable data structure.
 ### Implementation:
 - Used binary heap, Fibonacci Heap and then vEB Tree to implement the algorithm which involved implementation of the dictionary opeartions- Insert, Delete, extract minimum.
-- Observed behaviour of all the three implementation with diffent tyoe of inputs and plotted the observed changes into a graph.
+- Observed behaviour of all the three implementation with different type of inputs and plotted the observed changes into a graph.
 
 ### Results:
-Prepared a report (report.pdf in documents section) of all the obversvations.
+Documented a report (report.pdf in documents section) of all the obversvations.
