@@ -29,15 +29,12 @@ int low(int x,int size)
      return x%u;
 
 }
+
 int maximum(veb*v)
-{
-  return v->max;
-}
+{return v->max;}
 
 int minimum(veb*v)
-{
-  return v->min;
-}
+{return v->min;}
 
 
 void insert(veb*v,int key)
@@ -280,9 +277,7 @@ vector<vector<int>> graph{{0,15,14,13,12,11},{15,0,10,9,8,7},{14,10,0,6,5,4},{13
         {   
         	if(j>i)
         	{
-               // cout<<graph[i][j]<<endl;
-               // pq.push(graph[i][j]);
-               insert(v,graph[i][j]);
+            insert(v,graph[i][j]);
         	   m[graph[i][j]].push_back(make_pair(i,j));
 
         	}
@@ -296,30 +291,22 @@ vector<vector<int>> graph{{0,15,14,13,12,11},{15,0,10,9,8,7},{14,10,0,6,5,4},{13
     start=clock();
     create_wu(root,size);
     // krushkal's logic starts from here.
-    // while(!pq.empty())
     while(v->min!=-1)
     {
 
-        // l=m[pq.top()][0].first;
-        // r=m[pq.top()][0].second;
-
+    
          l=m[v->min][0].first;
         r=m[v->min][0].second;
 
         root_l1=find(l,root);
         root_r1=find(r,root);
 
-        // cout<<root_l1<<" "<<root_r1<<endl;
         if(root_r1!=root_l1)
         {  
-        	// cout<<l<<" "<<r<<endl;
         	weighted_Union(root_l1,root_r1,root,size);
         	res.push_back(make_pair(l,r));
         }
 
-
-        // m[pq.top()].erase(m[pq.top()].begin());
-        // pq.pop();
 
          m[v->min].erase(m[v->min].begin());
          int min_ele=v->min;

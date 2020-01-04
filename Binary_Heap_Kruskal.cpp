@@ -1,26 +1,8 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
-// void create_wu(int**root,int**size,int vertex)
-// {
-//      *root=new int[vertex];
-//      *size=new int[vertex];
-
-//      for(int i=0;i<vertex;i++)
-//      {
-//         *(*root+i)=i;
-//         *(*size+i)=1;
-
-//      }
-
-// }
-
 void create_wu(vector<int>&root,vector<int>&size)
 {
-    
-
-     for(int i=0;i<root.size();i++)
+    for(int i=0;i<root.size();i++)
      {
         root[i]=i;
         size[i]=1;
@@ -33,12 +15,12 @@ void create_wu(vector<int>&root,vector<int>&size)
 int find(int key,vector<int>&root)
 {
 
-while(key!=root[key])
-{
-key=root[key];
-}
+  while(key!=root[key])
+  {
+  key=root[key];
+  }
 
-return key;
+  return key;
 }
 
 
@@ -55,11 +37,9 @@ root_r=find(r,root);
  }
  else 
  {   
- 	// cout<<"here"<<endl;
-     root[root_l]=root_r;
+ 	   root[root_l]=root_r;
      size[root_r]=size[root_r]+size[root_l];
-     // cout<<root_l<<" "<<size[root_l]<<endl;
- }
+   }
 
 
 
@@ -70,25 +50,11 @@ root_r=find(r,root);
 int main()
 {
 
-// int *root,*size;
 int l,r,root_l1,root_r1;
 vector<int>root(6);
 vector<int>size(6);
-// create_wu(root,size);
-// weighted_Union(0,1,root,size);
-// weighted_Union(0,2,root,size);
-
-// weighted_Union(3,4,root,size);
-// weighted_Union(3,5,root,size);
-// weighted_Union(6,5,root,size);
-
-// weighted_Union(2,6,root,size);
-// cout<<find(2,root)<<" "<<find(6,root);
-// cout<<find(2,root)<<endl;
-// cout<<root[3]<<endl;
 vector<pair<int,int>> res;
 map<int,vector<pair<int,int>>> m;
-//vector<vector<int>> graph{{0,5,6,7},{5,0,5,18},{6,5,0,19},{7,18,19,0}};
 vector<vector<int>> graph{{0,15,14,13,12,11},{15,0,10,9,8,7},{14,10,0,6,5,4},{13,9,6,0,3,2},{12,8,5,3,0,1},{11,7,4,2,1,0}};
 
 priority_queue<int,vector<int>,greater<int>> pq;   //min heap
